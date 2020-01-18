@@ -13,19 +13,20 @@ public class PlayerCharacter : CharacterBase
     private float _jumpForce;
     [SerializeField]
     private float _jumpTime;
+    [SerializeField]
+    private float _additionalGravity;
 
     private float _dashDirection;
     private float _horizontalSpeed;
     private float _verticalSpeed;
     private bool _isDashing;
-    private bool _isAirborne;
 
     protected override void Update()
     {
         _horizontalSpeed = Input.GetAxis("Horizontal");
         _verticalSpeed = Input.GetAxis("Vertical");
 
-        if (!_isAirborne && !_isDashing && !IsAttacking)
+        if (!IsAirborne && !_isDashing && !IsAttacking)
         {
             if (Input.GetButtonDown("Fire"))
             {
@@ -34,18 +35,29 @@ public class PlayerCharacter : CharacterBase
 
             if (Input.GetButtonDown("Jump"))
             {
-                StartCoroutine(Jump());
+                InstaJump();
             }
 
             if (Input.GetButtonDown("Dash"))
             {
                 Dash();
             }
+        }
 
-            Move(_horizontalSpeed);
+        if (IsAirborne)
+        {
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y - _additionalGravity);
         }
 
         base.Update();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!IsAirborne && !_isDashing && !IsAttacking)
+        {
+            Move(_horizontalSpeed);
+        }
     }
 
     private void Dash()
@@ -75,16 +87,11 @@ public class PlayerCharacter : CharacterBase
         UIManager.Instance.SetHeroHealth(CurrentHealth, MaxHealth);
     }
 
-    private IEnumerator Jump()
+    private void InstaJump()
     {
-        float jumpStartTime = Time.time;
-        while (Time.time < jumpStartTime + _jumpTime)
-        {
-            _rigidbody.AddForce(new Vector2(0f, _jumpForce));
-            yield return new WaitForEndOfFrame();
-        }
+        _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpForce);
     }
-
+    
     protected override void Die(CauseOfDeath causeOfDeath)
     {
         base.Die(causeOfDeath);
@@ -93,7 +100,7 @@ public class PlayerCharacter : CharacterBase
 
     protected override void HandleIncomingDamageEffects(int damage)
     {
-
+        return;
     }
 
     protected override bool IsFacingLeft()
