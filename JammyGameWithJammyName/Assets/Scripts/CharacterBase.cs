@@ -11,6 +11,14 @@ public abstract class CharacterBase : MonoBehaviour
     protected Animator _animator;
     [SerializeField]
     private float _invulnerabilityTime;
+    [SerializeField]
+    private AudioSource _audioSource;
+    [SerializeField]
+    private AudioData _audioData;
+    [SerializeField]
+    protected SpriteData _spriteData;
+    [SerializeField]
+    protected SpriteRenderer _characterImage;
 
     private float _currentHealth;
     private bool _invulnerable;

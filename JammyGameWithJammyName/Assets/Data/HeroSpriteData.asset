@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e91671ea2e9a24e8dee5e8aaf71c79, type: 3}
+  m_Name: HeroSpriteData
+  m_EditorClassIdentifier: 
+  DefaultSprite: {fileID: 0}
+  DashSprite: {fileID: 0}
+  JumpSprite: {fileID: 0}
+  DialogSprite: {fileID: 0}
+  DeathSprite: {fileID: 0}
+  TakeDamageSprite: {fileID: 0}
