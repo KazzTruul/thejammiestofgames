@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 1000
-  _movementSpeed: 5000
+  _movementSpeed: 250
   _animator: {fileID: 9012551743341251066}
   _invulnerabilityTime: 1
   _audioSource: {fileID: 1073477839198804629}
@@ -68,8 +68,9 @@ MonoBehaviour:
   _dashTime: 1
   _dashSpeed: 100
   _dashCooldown: 3
-  _jumpForce: 4000
+  _jumpForce: 15
   _jumpTime: 0.5
+  _additionalGravity: 0.3
 --- !u!61 &5008439595321080058
 BoxCollider2D:
   m_ObjectHideFlags: 0
