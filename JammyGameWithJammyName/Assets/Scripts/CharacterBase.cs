@@ -117,6 +117,8 @@ public abstract class CharacterBase : MonoBehaviour
                 _animator.SetTrigger("DamageDeath");
                 break;
         }
+
+        GameStateManager.SetGameState(GameState.GameOver);
     }
 
     protected abstract bool IsFacingLeft();
