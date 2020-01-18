@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 1000
-  _movementSpeed: 250
+  _movementSpeed: 350
   _animator: {fileID: 9012551743341251066}
   _invulnerabilityTime: 1
   _audioSource: {fileID: 1073477839198804629}
@@ -60,13 +60,13 @@ MonoBehaviour:
   _spriteData: {fileID: 11400000, guid: bb17ba6622d341e49afb8c22accb9c68, type: 2}
   _characterImage: {fileID: 8310945035674117302}
   _rigidbody: {fileID: 7946197201380346978}
-  _attackAnimationTime: 1
+  _attackAnimationTime: 0.2
   _attackCooldownTime: 1
   _leftWeaponObject: {fileID: 7726026803283997338}
   _rightWeaponObject: {fileID: 7029963751802156371}
   _maxMoveSpeed: 0
-  _dashTime: 1
-  _dashSpeed: 100
+  _dashTime: 0.2
+  _dashSpeed: 2000
   _dashCooldown: 3
   _jumpForce: 15
   _jumpTime: 0.5
@@ -325,6 +325,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeechCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1181413125174639502, guid: edb22566675bcce429705f818c08726c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6239870531034947578, guid: edb22566675bcce429705f818c08726c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -459,6 +464,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425699747998817411, guid: 52371df4498e0214dba8494bf58eb905,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425699747998817411, guid: 52371df4498e0214dba8494bf58eb905,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425699747998817411, guid: 52371df4498e0214dba8494bf58eb905,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425699747998817411, guid: 52371df4498e0214dba8494bf58eb905,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.47
       objectReference: {fileID: 0}
     - target: {fileID: 7622812501506090269, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
