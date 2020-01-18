@@ -21,6 +21,13 @@ public class BossCharacter : CharacterBase
         _player = FindObjectOfType<PlayerCharacter>();
     }
 
+    protected override void Update()
+    {
+
+
+        base.Update();
+    }
+
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);

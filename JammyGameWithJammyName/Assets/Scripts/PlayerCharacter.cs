@@ -9,16 +9,35 @@ public class PlayerCharacter : CharacterBase
     private float _dashSpeed;
     [SerializeField]
     private float _dashCooldown;
+    [SerializeField]
+    private float _jumpForce;
 
     private Vector2 _dashDirection;
     private float _horizontalSpeed;
     private float _verticalSpeed;
     private bool _isDashing;
 
-    private void Update()
+    protected override void Update()
     {
         _horizontalSpeed = Input.GetAxis("Horizontal");
         _verticalSpeed = Input.GetAxis("Vertical");
+
+        if (Input.GetButtonDown("Fire"))
+        {
+            Attack();
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
+
+        if (Input.GetButtonDown("Dash"))
+        {
+            Dash();
+        }
+
+        base.Update();
     }
 
     private void Dash()
@@ -50,7 +69,7 @@ public class PlayerCharacter : CharacterBase
 
     private void Jump()
     {
-
+        _rigidbody.AddForce(new Vector2(0f, _jumpForce));
     }
 
     protected override void Die(CauseOfDeath causeOfDeath)

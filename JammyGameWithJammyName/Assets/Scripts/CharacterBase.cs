@@ -36,7 +36,25 @@ public abstract class CharacterBase : MonoBehaviour
 
     protected int CurrentHealth => _currentHealth;
     protected int MaxHealth => _maxHealth;
-    
+
+    protected virtual void Update()
+    {
+        _characterImage.transform.localScale = new Vector3(IsFacingLeft() ? -1f : 1f, 1f, 1f);
+    }
+
+    protected virtual void Move(Vector2 direction)
+    {
+        if (direction.x == 0f && direction.y == 0f)
+        {
+            _rigidbody.velocity = Vector2.zero;
+            _animator.SetBool("IsMoving", false);
+            return;
+        }
+
+        _rigidbody.AddForce(direction * _movementSpeed * Time.deltaTime);
+        _animator.SetBool("IsMoving", true);
+    }
+
     protected virtual void Attack()
     {
         if (!_canAttack)
@@ -110,11 +128,11 @@ public abstract class CharacterBase : MonoBehaviour
                 break;
 
             case CauseOfDeath.HeartAttack:
-                _animator.SetTrigger("DamageDeath");
+                _animator.SetTrigger("HeartAttackDeath");
                 break;
 
             case CauseOfDeath.Suspicious:
-                _animator.SetTrigger("DamageDeath");
+                _animator.SetTrigger("SuspicionDeath");
                 break;
         }
 
