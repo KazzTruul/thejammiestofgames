@@ -42,7 +42,7 @@ public class PlayerCharacter : CharacterBase
         _isDashing = false;
     }
 
-    protected override void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
         UIManager.Instance.SetHeroHealth(CurrentHealth, MaxHealth);
@@ -62,5 +62,10 @@ public class PlayerCharacter : CharacterBase
     protected override void HandleIncomingDamageEffects(int damage)
     {
         throw new System.NotImplementedException();
+    }
+
+    protected override bool IsFacingLeft()
+    {
+        return _horizontalSpeed < 0f;
     }
 }

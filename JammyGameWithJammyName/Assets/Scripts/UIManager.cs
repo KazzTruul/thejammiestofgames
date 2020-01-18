@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     private GameObject _gameOverScreen;
     [SerializeField]
     private GameObject _winScreen;
+    [SerializeField]
+    private GameObject _pauseMenu;
 
     private static UIManager _instance;
 
@@ -31,7 +33,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        if(_instance != null && _instance != this)
+        if (_instance != null && _instance != this)
         {
             Destroy(this);
             return;

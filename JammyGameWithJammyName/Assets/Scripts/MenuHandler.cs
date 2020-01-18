@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MenuHandler : MonoBehaviour
 {
-    public void StartGame()
+    public void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
@@ -14,6 +14,11 @@ public class MenuHandler : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void PreviousScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void Reload()
