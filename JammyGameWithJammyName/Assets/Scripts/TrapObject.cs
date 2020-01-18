@@ -16,7 +16,12 @@ public class TrapObject : MonoBehaviour
         {
             character.TakeDamage(damageAmount);
             Destroy(gameObject);
-        }else if(collision.tag == "BoundryBox")
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag == "BoundryBox" || collision.collider.tag == "Platform" || collision.collider.tag == "Ground")
         {
             Destroy(gameObject);
         }
