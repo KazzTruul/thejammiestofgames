@@ -29,35 +29,49 @@ public abstract class CharacterBase : MonoBehaviour
     private GameObject _leftWeaponObject;
     [SerializeField]
     private GameObject _rightWeaponObject;
+    [SerializeField]
+    private float _maxMoveSpeed;
 
     private int _currentHealth;
     private bool _invulnerable;
-    private bool _canAttack = true;
+    private bool _isAttacking;
+    private bool _isAirborne;
+
+    private BoxCollider2D _boxCollider;
 
     protected int CurrentHealth => _currentHealth;
     protected int MaxHealth => _maxHealth;
+    protected bool IsAttacking => _isAttacking;
+    protected bool IsAirborne => _isAirborne;
+
+    private void Start()
+    {
+        _boxCollider = GetComponent<BoxCollider2D>();
+    }
 
     protected virtual void Update()
     {
+        
+        _isAirborne = !_boxCollider.IsTouchingLayers(0/*FIX THIS PLZ!*/);
         _characterImage.transform.localScale = new Vector3(IsFacingLeft() ? -1f : 1f, 1f, 1f);
     }
 
-    protected virtual void Move(Vector2 direction)
+    protected virtual void Move(float velocity)
     {
-        if (direction.x == 0f && direction.y == 0f)
+        if (velocity == 0f)
         {
             _rigidbody.velocity = Vector2.zero;
             _animator.SetBool("IsMoving", false);
             return;
         }
 
-        _rigidbody.AddForce(direction * _movementSpeed * Time.deltaTime);
+        _rigidbody.AddForce(new Vector2(velocity * _movementSpeed * Time.deltaTime, 0f));
         _animator.SetBool("IsMoving", true);
     }
 
     protected virtual void Attack()
     {
-        if (!_canAttack)
+        if (_isAttacking)
         {
             return;
         }
@@ -107,7 +121,7 @@ public abstract class CharacterBase : MonoBehaviour
 
     private IEnumerator AttackCooldown()
     {
-        _canAttack = false;
+        _isAttacking = true;
 
         yield return new WaitForSeconds(_attackCooldownTime);
 
@@ -116,7 +130,7 @@ public abstract class CharacterBase : MonoBehaviour
             _leftWeaponObject.SetActive(false);
         }
 
-        _canAttack = true;
+        _isAttacking = true;
     }
 
     protected virtual void Die(CauseOfDeath causeOfDeath)

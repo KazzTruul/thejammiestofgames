@@ -11,37 +11,43 @@ public class PlayerCharacter : CharacterBase
     private float _dashCooldown;
     [SerializeField]
     private float _jumpForce;
+    [SerializeField]
+    private float _jumpTime;
 
-    private Vector2 _dashDirection;
+    private float _dashDirection;
     private float _horizontalSpeed;
     private float _verticalSpeed;
     private bool _isDashing;
+    private bool _isAirborne;
 
     protected override void Update()
     {
         _horizontalSpeed = Input.GetAxis("Horizontal");
         _verticalSpeed = Input.GetAxis("Vertical");
 
-        if (Input.GetButtonDown("Fire"))
+        if (!_isAirborne && !_isDashing && !IsAttacking)
         {
-            Attack();
-        }
+            if (Input.GetButtonDown("Fire"))
+            {
+                Attack();
+            }
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            Jump();
-        }
+            if (Input.GetButtonDown("Jump"))
+            {
+                StartCoroutine(Jump());
+            }
 
-        if (Input.GetButtonDown("Dash"))
-        {
-            Dash();
-        }
+            if (Input.GetButtonDown("Dash"))
+            {
+                Dash();
+            }
 
-        Move(new Vector2(_horizontalSpeed, _verticalSpeed));
+            Move(_horizontalSpeed);
+        }
 
         base.Update();
     }
-    
+
     private void Dash()
     {
         StartCoroutine(DashTimer());
@@ -51,12 +57,12 @@ public class PlayerCharacter : CharacterBase
     {
         _isDashing = true;
 
-        _dashDirection = new Vector2(Mathf.Round(_horizontalSpeed), Mathf.Round(_verticalSpeed));
+        _dashDirection = Mathf.Round(_horizontalSpeed);
 
         float dashStartTime = Time.time;
         while (Time.time < dashStartTime + _dashTime)
         {
-            _rigidbody.AddForce(_dashDirection * _dashSpeed);
+            _rigidbody.AddForce(new Vector2(_dashDirection * _dashSpeed, 0f));
             yield return new WaitForEndOfFrame();
         }
 
@@ -69,9 +75,14 @@ public class PlayerCharacter : CharacterBase
         UIManager.Instance.SetHeroHealth(CurrentHealth, MaxHealth);
     }
 
-    private void Jump()
+    private IEnumerator Jump()
     {
-        _rigidbody.AddForce(new Vector2(0f, _jumpForce));
+        float jumpStartTime = Time.time;
+        while (Time.time < jumpStartTime + _jumpTime)
+        {
+            _rigidbody.AddForce(new Vector2(0f, _jumpForce));
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     protected override void Die(CauseOfDeath causeOfDeath)
@@ -82,7 +93,7 @@ public class PlayerCharacter : CharacterBase
 
     protected override void HandleIncomingDamageEffects(int damage)
     {
-        throw new System.NotImplementedException();
+
     }
 
     protected override bool IsFacingLeft()
