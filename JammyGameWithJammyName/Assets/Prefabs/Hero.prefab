@@ -442,6 +442,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7778946325455289251}
     m_Modifications:
+    - target: {fileID: 1799875854807124430, guid: 52371df4498e0214dba8494bf58eb905,
+        type: 3}
+      propertyPath: m_Name
+      value: WeaponSprite
+      objectReference: {fileID: 0}
     - target: {fileID: 2562805267589321356, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
       propertyPath: m_Offset.x
@@ -512,6 +517,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightHeroWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 8540130686657433548, guid: 52371df4498e0214dba8494bf58eb905,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52371df4498e0214dba8494bf58eb905, type: 3}
 --- !u!1 &7029963751802156371 stripped
@@ -533,6 +543,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7778946325455289251}
     m_Modifications:
+    - target: {fileID: 1799875854807124430, guid: 52371df4498e0214dba8494bf58eb905,
+        type: 3}
+      propertyPath: m_Name
+      value: WeaponSprite
+      objectReference: {fileID: 0}
     - target: {fileID: 2562805267589321356, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
       propertyPath: m_Offset.x
@@ -546,7 +561,7 @@ PrefabInstance:
     - target: {fileID: 5425699747998817411, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.69
+      value: -4.69
       objectReference: {fileID: 0}
     - target: {fileID: 5425699747998817411, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
@@ -562,6 +577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969556744683211031, guid: 52371df4498e0214dba8494bf58eb905,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7622812501506090269, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
@@ -622,6 +642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LeftHeroWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540130686657433548, guid: 52371df4498e0214dba8494bf58eb905,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52371df4498e0214dba8494bf58eb905, type: 3}
