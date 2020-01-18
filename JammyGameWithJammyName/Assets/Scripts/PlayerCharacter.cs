@@ -37,9 +37,11 @@ public class PlayerCharacter : CharacterBase
             Dash();
         }
 
+        Move(new Vector2(_horizontalSpeed, _verticalSpeed));
+
         base.Update();
     }
-
+    
     private void Dash()
     {
         StartCoroutine(DashTimer());
