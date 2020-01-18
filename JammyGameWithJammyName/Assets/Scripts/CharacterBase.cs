@@ -47,12 +47,12 @@ public abstract class CharacterBase : MonoBehaviour
         if (direction.x == 0f && direction.y == 0f)
         {
             _rigidbody.velocity = Vector2.zero;
-            _animator.SetBool("Moving", false);
+            _animator.SetBool("IsMoving", false);
             return;
         }
 
         _rigidbody.AddForce(direction * _movementSpeed * Time.deltaTime);
-        _animator.SetBool("Moving", true);
+        _animator.SetBool("IsMoving", true);
     }
 
     protected virtual void Attack()
@@ -128,11 +128,11 @@ public abstract class CharacterBase : MonoBehaviour
                 break;
 
             case CauseOfDeath.HeartAttack:
-                _animator.SetTrigger("DamageDeath");
+                _animator.SetTrigger("HeartAttackDeath");
                 break;
 
             case CauseOfDeath.Suspicious:
-                _animator.SetTrigger("DamageDeath");
+                _animator.SetTrigger("SuspicionDeath");
                 break;
         }
 
