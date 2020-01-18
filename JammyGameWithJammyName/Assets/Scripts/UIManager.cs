@@ -40,5 +40,27 @@ public class UIManager : MonoBehaviour
     {
         _heroHealthSlider.value = current;
         _heroHealthSlider.maxValue = max;
+        _heroHealthText.text = $"{current}/{max} HP";
+    }
+
+    public void SetBossHealth(int current, int max)
+    {
+        _bossHealthSlider.value = current;
+        _bossHealthSlider.maxValue = max;
+        _bossHealthText.text = $"{current}/{max} HP";
+    }
+
+    public void SetBossSuspicion(int current, int max)
+    {
+        _bossSuspicionSlider.value = current;
+        _bossSuspicionSlider.maxValue = max;
+        _bossSuspicionText.text = $"{current}/{max} Suspicion";
+    }
+
+    public void SetBossBloodPressure(int current, int max)
+    {
+        _bossBloodPressureSlider.value = current;
+        _bossBloodPressureSlider.maxValue = max;
+        _bossBloodPressureText.text = $"{current} BPM";
     }
 }
