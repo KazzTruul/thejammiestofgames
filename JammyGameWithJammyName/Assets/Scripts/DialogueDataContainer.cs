@@ -12,11 +12,12 @@ public enum Character
 public struct DialogueData
 {
     public string text;
-    public Character character; 
+    public Character character;
 }
 
 [CreateAssetMenu]
 public class DialogueDataContainer : ScriptableObject
 {
     public DialogueData[] dialogueData;
+    public bool used = false;
 }
