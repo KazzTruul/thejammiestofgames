@@ -20,10 +20,14 @@ public class UIManager : MonoBehaviour
     private Slider _bossBloodPressureSlider;
     [SerializeField]
     private TMP_Text _bossBloodPressureText;
+    [SerializeField]
+    private GameObject _gameOverScreen;
+    [SerializeField]
+    private GameObject _winScreen;
 
-    private UIManager _instance;
+    private static UIManager _instance;
 
-    public UIManager Instance => _instance;
+    public static UIManager Instance => _instance;
 
     private void Awake()
     {
@@ -62,5 +66,17 @@ public class UIManager : MonoBehaviour
         _bossBloodPressureSlider.value = current;
         _bossBloodPressureSlider.maxValue = max;
         _bossBloodPressureText.text = $"{current} BPM";
+    }
+
+    public void GameOver(bool gameWon)
+    {
+        if (gameWon)
+        {
+            _winScreen.SetActive(true);
+        }
+        else
+        {
+            _gameOverScreen.SetActive(true);
+        }
     }
 }

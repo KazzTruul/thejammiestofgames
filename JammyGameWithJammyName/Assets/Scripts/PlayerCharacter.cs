@@ -42,19 +42,21 @@ public class PlayerCharacter : CharacterBase
         _isDashing = false;
     }
 
+    protected override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        UIManager.Instance.SetHeroHealth(CurrentHealth, MaxHealth);
+    }
+
     private void Jump()
     {
 
     }
 
-    protected override void Attack()
+    protected override void Die(CauseOfDeath causeOfDeath)
     {
-        throw new System.NotImplementedException();
-    }
-
-    protected override void Die()
-    {
-        throw new System.NotImplementedException();
+        base.Die(causeOfDeath);
+        UIManager.Instance.GameOver(true);
     }
 
     protected override void HandleIncomingDamageEffects(int damage)
