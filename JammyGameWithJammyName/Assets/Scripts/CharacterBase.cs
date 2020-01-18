@@ -19,6 +19,8 @@ public abstract class CharacterBase : MonoBehaviour
     protected SpriteData _spriteData;
     [SerializeField]
     protected SpriteRenderer _characterImage;
+    [SerializeField]
+    protected Rigidbody2D _rigidbody;
 
     private float _currentHealth;
     private bool _invulnerable;
