@@ -26,7 +26,9 @@ public abstract class CharacterBase : MonoBehaviour
     [SerializeField]
     private float _attackCooldownTime;
     [SerializeField]
-    private GameObject _weaponObject;
+    private GameObject _leftWeaponObject;
+    [SerializeField]
+    private GameObject _rightWeaponObject;
 
     private int _currentHealth;
     private bool _invulnerable;
@@ -34,7 +36,7 @@ public abstract class CharacterBase : MonoBehaviour
 
     protected int CurrentHealth => _currentHealth;
     protected int MaxHealth => _maxHealth;
-
+    
     protected virtual void Attack()
     {
         if (!_canAttack)
@@ -43,11 +45,19 @@ public abstract class CharacterBase : MonoBehaviour
         }
 
         _animator.SetTrigger("Attack");
-        _weaponObject.SetActive(true);
+
+        if (IsFacingLeft())
+        {
+            _leftWeaponObject.SetActive(true);
+        }
+        else
+        {
+            _rightWeaponObject.SetActive(true);
+        }
         StartCoroutine(AttackCooldown());
     }
 
-    protected virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         HandleIncomingDamageEffects(damage);
 
@@ -83,9 +93,9 @@ public abstract class CharacterBase : MonoBehaviour
 
         yield return new WaitForSeconds(_attackCooldownTime);
 
-        if (_weaponObject.activeInHierarchy)
+        if (_leftWeaponObject.activeInHierarchy)
         {
-            _weaponObject.SetActive(false);
+            _leftWeaponObject.SetActive(false);
         }
 
         _canAttack = true;
@@ -108,4 +118,6 @@ public abstract class CharacterBase : MonoBehaviour
                 break;
         }
     }
+
+    protected abstract bool IsFacingLeft();
 }

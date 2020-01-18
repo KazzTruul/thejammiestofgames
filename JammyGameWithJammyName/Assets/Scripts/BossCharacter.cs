@@ -13,12 +13,15 @@ public class BossCharacter : CharacterBase
 
     private int _currentSuspicion;
 
+    private PlayerCharacter _player;
+
     private void Start()
     {
         _currentSuspicion = _initialSuspicion;
+        _player = FindObjectOfType<PlayerCharacter>();
     }
 
-    protected override void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
         UIManager.Instance.SetBossHealth(CurrentHealth, MaxHealth);
@@ -50,5 +53,10 @@ public class BossCharacter : CharacterBase
     protected override void HandleIncomingDamageEffects(int damage)
     {
         DecreaseSuspicion(damage * _suspicionPerDamage);
+    }
+
+    protected override bool IsFacingLeft()
+    {
+        return _player.transform.position.x <= transform.position.x;
     }
 }
