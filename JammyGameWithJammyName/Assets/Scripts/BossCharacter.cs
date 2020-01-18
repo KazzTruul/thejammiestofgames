@@ -8,26 +8,55 @@ public class BossCharacter : CharacterBase
     private int _maxSuspicion;
     [SerializeField]
     private int _initialSuspicion;
+    [SerializeField]
+    private int _suspicionPerDamage = 2;
 
     private int _currentSuspicion;
+
+    private PlayerCharacter _player;
 
     private void Start()
     {
         _currentSuspicion = _initialSuspicion;
+        _player = FindObjectOfType<PlayerCharacter>();
     }
 
-    protected override void Attack()
+    public override void TakeDamage(int damage)
     {
-        throw new System.NotImplementedException();
+        base.TakeDamage(damage);
+        UIManager.Instance.SetBossHealth(CurrentHealth, MaxHealth);
     }
 
-    protected override void Die()
+    private void IncreaseSuspicion(int amount)
     {
-        throw new System.NotImplementedException();
+        _currentSuspicion += amount;
+        UIManager.Instance.SetBossSuspicion(_currentSuspicion, _maxSuspicion);
+
+        if (_currentSuspicion >= _maxSuspicion)
+        {
+            Die(CauseOfDeath.Suspicious);
+        }
+    }
+
+    private void DecreaseSuspicion(int amount)
+    {
+        _currentSuspicion -= amount;
+        UIManager.Instance.SetBossSuspicion(_currentSuspicion, _maxSuspicion);
+    }
+
+    protected override void Die(CauseOfDeath causeOfDeath)
+    {
+        base.Die(causeOfDeath);
+        UIManager.Instance.GameOver(false);
     }
 
     protected override void HandleIncomingDamageEffects(int damage)
     {
-        throw new System.NotImplementedException();
+        DecreaseSuspicion(damage * _suspicionPerDamage);
+    }
+
+    protected override bool IsFacingLeft()
+    {
+        return _player.transform.position.x <= transform.position.x;
     }
 }
