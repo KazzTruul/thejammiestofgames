@@ -21,7 +21,9 @@ public class PlayerCharacter : CharacterBase
     private float _verticalSpeed;
     private bool _isDashing;
     private bool _facingLeft;
-    
+
+    protected override bool _dontTurn => false;
+
     protected override void Update()
     {
         _horizontalSpeed = Input.GetAxis("Horizontal");
