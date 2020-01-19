@@ -24,6 +24,8 @@ public class BossCharacter : CharacterBase
 
     private PlayerCharacter _player;
 
+    protected override bool _dontTurn => Mathf.Abs(transform.position.x - _player.transform.position.x) <  _attackRange * 0.1f;
+
     private void Start()
     {
         _currentSuspicion = _initialSuspicion;
@@ -40,13 +42,12 @@ public class BossCharacter : CharacterBase
         StartCoroutine(IncreaseSuspicionOverTime());
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-
-    //}
-
     protected override void Update()
     {
+        if (_dontTurn)
+        {
+            return;
+        }
 
         if (!IsAttacking && !_preparingAttack)
         {

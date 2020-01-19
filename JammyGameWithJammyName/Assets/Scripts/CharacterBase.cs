@@ -44,6 +44,7 @@ public abstract class CharacterBase : MonoBehaviour
     protected bool IsAttacking => _isAttacking;
     protected bool IsAirborne => _isAirborne;
     protected bool Invulnerable => _invulnerable;
+    protected abstract bool _dontTurn { get; }
     protected BoxCollider2D BoxCollider => _boxCollider;
 
     private void Awake()
@@ -56,7 +57,7 @@ public abstract class CharacterBase : MonoBehaviour
     {
         _isAirborne = !_boxCollider.IsTouchingLayers(LayerMask.GetMask("Floors"));
 
-        if (_isAttacking || _isAirborne || _invulnerable)
+        if (_isAttacking || _isAirborne || _invulnerable || _dontTurn)
         {
             return;
         }
