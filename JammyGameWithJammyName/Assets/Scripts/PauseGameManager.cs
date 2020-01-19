@@ -9,6 +9,8 @@ public class PauseGameManager : MonoBehaviour
 
     public static PauseGameManager Instance;
 
+    private bool _gamePaused;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -20,8 +22,17 @@ public class PauseGameManager : MonoBehaviour
         _instance = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            SetGamePaused(!_gamePaused);
+        }
+    }
+
     public void SetGamePaused(bool pauseGame)
     {
+        _gamePaused = pauseGame;
         Time.timeScale = pauseGame ? 0f : 1f;
         _pauseMenu.SetActive(pauseGame);
         GameStateManager.SetGameState(pauseGame ? GameState.GamePaused : GameState.GameRunning);
