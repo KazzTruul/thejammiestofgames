@@ -34,6 +34,11 @@ public class MenuHandler : MonoBehaviour
         text.color = c;
     }
 
+    public void LoadTutorialScene()
+    {
+        SceneManager.LoadScene(3);
+    }
+
     public void HoverButtonExit(Text text)
     {
         Color c = text.color;
