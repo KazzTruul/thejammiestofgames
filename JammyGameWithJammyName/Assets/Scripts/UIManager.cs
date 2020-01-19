@@ -57,7 +57,7 @@ public class UIManager : MonoBehaviour
     public void SetBossSuspicion(int current, int max)
     {
         _bossSuspicionSlider.fillAmount = (float)current / (float)max;
-        _bossSuspicionText.text = $"{Mathf.Round((float)current / (float)max)}%";
+        _bossSuspicionText.text = $"{_bossSuspicionSlider.fillAmount * 100}%";
     }
 
     public void SetBossBloodPressure(int current, int max)

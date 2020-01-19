@@ -44,6 +44,7 @@ public abstract class CharacterBase : MonoBehaviour
     protected bool IsAttacking => _isAttacking;
     protected bool IsAirborne => _isAirborne;
     protected bool Invulnerable => _invulnerable;
+    protected BoxCollider2D BoxCollider => _boxCollider;
 
     private void Awake()
     {

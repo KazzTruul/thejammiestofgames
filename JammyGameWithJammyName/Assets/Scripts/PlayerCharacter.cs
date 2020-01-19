@@ -20,14 +20,7 @@ public class PlayerCharacter : CharacterBase
     private float _horizontalSpeed;
     private float _verticalSpeed;
     private bool _isDashing;
-
-    private BoxCollider2D _boxCollider;
-
-    private void Start()
-    {
-        _boxCollider = GetComponent<BoxCollider2D>();
-    }
-
+    
     protected override void Update()
     {
         _horizontalSpeed = Input.GetAxis("Horizontal");
@@ -77,7 +70,7 @@ public class PlayerCharacter : CharacterBase
     {
         _isDashing = true;
 
-        _boxCollider.enabled = false;
+        BoxCollider.enabled = false;
 
         _dashDirection = Mathf.Round(_horizontalSpeed);
 
@@ -88,7 +81,7 @@ public class PlayerCharacter : CharacterBase
             yield return new WaitForEndOfFrame();
         }
 
-        _boxCollider.enabled = true;
+        BoxCollider.enabled = true;
 
         _isDashing = false;
     }

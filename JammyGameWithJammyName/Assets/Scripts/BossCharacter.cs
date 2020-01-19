@@ -28,14 +28,16 @@ public class BossCharacter : CharacterBase
     {
         _currentSuspicion = _initialSuspicion;
         _player = FindObjectOfType<PlayerCharacter>();
-        StartCoroutine(IncreaseSuspicion());
+        StartCoroutine(IncreaseSuspicionOverTime());
+        UIManager.Instance.SetBossSuspicion(_currentSuspicion, _maxSuspicion);
+        UIManager.Instance.SetBossHealth(CurrentHealth, MaxHealth);
     }
 
-    private IEnumerator IncreaseSuspicion()
+    private IEnumerator IncreaseSuspicionOverTime()
     {
         yield return new WaitForSeconds(1);
-        _currentSuspicion += _suspicionPerSecond;
-        StartCoroutine(IncreaseSuspicion());
+        IncreaseSuspicion(_suspicionPerSecond);
+        StartCoroutine(IncreaseSuspicionOverTime());
     }
 
     protected override void Update()
