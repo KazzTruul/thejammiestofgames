@@ -95,7 +95,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 6}
+  m_Size: {x: 6, y: 6}
   m_EdgeRadius: 0
 --- !u!95 &9012551743341251066
 Animator:
@@ -458,12 +458,12 @@ PrefabInstance:
     - target: {fileID: 2562805267589321356, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
       propertyPath: m_Offset.x
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2562805267589321356, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
       propertyPath: m_Size.x
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5425699747998817411, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
@@ -579,12 +579,12 @@ PrefabInstance:
     - target: {fileID: 2562805267589321356, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
       propertyPath: m_Offset.x
-      value: -2
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 2562805267589321356, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
       propertyPath: m_Size.x
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5425699747998817411, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}

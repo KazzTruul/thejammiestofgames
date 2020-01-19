@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class BossCharacter : CharacterBase
 {
@@ -9,9 +10,15 @@ public class BossCharacter : CharacterBase
     [SerializeField]
     private int _initialSuspicion;
     [SerializeField]
-    private int _suspicionPerDamage = 2;
+    private int _suspicionPerDamage;
+    [SerializeField]
+    private float _attackPreparationTime;
+    [SerializeField]
+    private float _attackRange;
 
     private int _currentSuspicion;
+
+    private bool _preparingAttack;
 
     private PlayerCharacter _player;
 
@@ -23,9 +30,26 @@ public class BossCharacter : CharacterBase
 
     protected override void Update()
     {
-
+        if (!IsAttacking && !_preparingAttack && Vector3.Distance(transform.position, _player.transform.position) < _attackRange)
+        {
+            StartCoroutine(PrepareAttack());
+        }
 
         base.Update();
+    }
+
+    private void FixedUpdate()
+    {
+        
+    }
+
+    private IEnumerator PrepareAttack()
+    {
+        _preparingAttack = true;
+        //_animator.SetTrigger("PrepareAttack");
+        yield return new WaitForSeconds(_attackPreparationTime);
+        _preparingAttack = false;
+        Attack();
     }
 
     public override void TakeDamage(int damage)

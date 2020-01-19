@@ -149,6 +149,8 @@ MonoBehaviour:
   _maxSuspicion: 100
   _initialSuspicion: 10
   _suspicionPerDamage: 2
+  _attackPreparationTime: 1
+  _attackRange: 30
 --- !u!61 &4864500606719134782
 BoxCollider2D:
   m_ObjectHideFlags: 0
