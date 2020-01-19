@@ -351,6 +351,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 339e0d4abee05694ba29b53623267a76, type: 3}
+--- !u!61 &1796188 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4864500606719134782, guid: 339e0d4abee05694ba29b53623267a76,
+    type: 3}
+  m_PrefabInstance: {fileID: 1796187}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8578516
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,12 +437,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &43607418 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4864500606719134783, guid: 339e0d4abee05694ba29b53623267a76,
-    type: 3}
-  m_PrefabInstance: {fileID: 1796187}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &67477556
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &282756660
 Transform:
   m_ObjectHideFlags: 0
@@ -671,7 +671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &346551792
 Transform:
   m_ObjectHideFlags: 0
@@ -742,7 +742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &492524054
 Transform:
   m_ObjectHideFlags: 0
@@ -806,13 +806,14 @@ GameObject:
   m_Component:
   - component: {fileID: 515131459}
   - component: {fileID: 515131457}
+  - component: {fileID: 515131458}
   m_Layer: 9
   m_Name: StandingPlatforms
   m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &515131457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -839,6 +840,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.33, y: 0.51}
   m_EdgeRadius: 0
+--- !u!114 &515131458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515131456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca12ee8c33956b46a080dc300b842f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1796188}
 --- !u!4 &515131459
 Transform:
   m_ObjectHideFlags: 0
@@ -1107,13 +1121,14 @@ GameObject:
   m_Component:
   - component: {fileID: 766765508}
   - component: {fileID: 766765506}
+  - component: {fileID: 766765507}
   m_Layer: 9
   m_Name: StandingPlatforms
   m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &766765506
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1140,6 +1155,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.31, y: 0.73}
   m_EdgeRadius: 0
+--- !u!114 &766765507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766765505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca12ee8c33956b46a080dc300b842f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1796188}
 --- !u!4 &766765508
 Transform:
   m_ObjectHideFlags: 0
@@ -1541,6 +1569,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7778946325455289250, guid: 45a28bd7052f89e46a5267d76b158027,
+        type: 3}
+      propertyPath: _jumpForce
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7778946325455289251, guid: 45a28bd7052f89e46a5267d76b158027,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1931,7 +1964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1881435849
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1970,7 +2003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca12ee8c33956b46a080dc300b842f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 43607418}
+  boss: {fileID: 1796188}
 --- !u!4 &1881435851
 Transform:
   m_ObjectHideFlags: 0
