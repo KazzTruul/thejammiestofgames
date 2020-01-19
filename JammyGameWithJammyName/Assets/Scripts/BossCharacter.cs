@@ -30,17 +30,19 @@ public class BossCharacter : CharacterBase
 
     protected override void Update()
     {
-        if (!IsAttacking && !_preparingAttack && Vector3.Distance(transform.position, _player.transform.position) < _attackRange)
+        if (!IsAttacking && !_preparingAttack)
         {
-            StartCoroutine(PrepareAttack());
+            if (Vector3.Distance(transform.position, _player.transform.position) <= _attackRange)
+            {
+                StartCoroutine(PrepareAttack());
+            }
+            else
+            {
+                _rigidbody.velocity = new Vector2(_movementSpeed * (IsFacingLeft() ? -1 : 1), _rigidbody.velocity.y);
+            }
         }
 
         base.Update();
-    }
-
-    private void FixedUpdate()
-    {
-        
     }
 
     private IEnumerator PrepareAttack()

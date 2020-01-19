@@ -99,6 +99,7 @@ public abstract class CharacterBase : MonoBehaviour
             return;
         }
 
+        _audioSource.PlayOneShot(_audioData.TakeDamageAudioClips[Random.Range(0, _audioData.TakeDamageAudioClips.Length - 1)]);
 
         _currentHealth -= damage;
         if (_currentHealth <= 0)

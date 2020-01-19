@@ -55,7 +55,7 @@ public class Weapon : MonoBehaviour
             return;
         }
 
-        //_audioSource.PlayOneShot(_weaponData.HitSounds[Random.Range(0, _weaponData.HitSounds.Length - 1)]);
+        _audioSource.PlayOneShot(_weaponData.HitSounds[Random.Range(0, _weaponData.HitSounds.Length - 1)]);
         hitCharacter.TakeDamage(_weaponData.Damage);
     }
 }
