@@ -40,6 +40,11 @@ public class BossCharacter : CharacterBase
         StartCoroutine(IncreaseSuspicionOverTime());
     }
 
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+
+    //}
+
     protected override void Update()
     {
 
