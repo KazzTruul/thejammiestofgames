@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WhiteLevel.unity
     guid: f8e9d36ba1a85b74c972528dbcca7e6a
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 500ead299f4b8b84faaa76244e40b88a
   m_configObjects: {}
