@@ -20,11 +20,18 @@ public class PauseGameManager : MonoBehaviour
         }
 
         _instance = this;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        Time.timeScale = 1f;
+
+        GameStateManager.SetGameState(GameState.GameRunning);
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") && (GameStateManager.CurrentGameState == GameState.GameRunning || GameStateManager.CurrentGameState == GameState.GamePaused))
         {
             SetGamePaused(!_gamePaused);
         }
@@ -36,5 +43,7 @@ public class PauseGameManager : MonoBehaviour
         Time.timeScale = pauseGame ? 0f : 1f;
         _pauseMenu.SetActive(pauseGame);
         GameStateManager.SetGameState(pauseGame ? GameState.GamePaused : GameState.GameRunning);
+        Cursor.lockState = pauseGame ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = pauseGame;
     }
 }

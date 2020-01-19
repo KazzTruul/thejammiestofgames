@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6579846042048073518}
+  - component: {fileID: 1905663358}
   m_Layer: 0
   m_Name: BoulderSpawner
   m_TagString: Untagged
@@ -31,6 +32,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1905663358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579846042048073516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2fd07428c54b7468237e5c66248602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hazardObject: {fileID: 7880043313536594289, guid: 053b95eb19b08174f919692862633f19,
+    type: 3}
+  minTimeBetweenTriggers: 5
+  maxTimeBetweenTriggers: 10
+  spawnTransform: {fileID: 6579846043669811708}
 --- !u!1 &6579846043669811707
 GameObject:
   m_ObjectHideFlags: 0
