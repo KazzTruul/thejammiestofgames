@@ -40,6 +40,11 @@ public class BossCharacter : CharacterBase
         StartCoroutine(IncreaseSuspicionOverTime());
     }
 
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+
+    //}
+
     protected override void Update()
     {
 
@@ -71,16 +76,46 @@ public class BossCharacter : CharacterBase
     {
         base.TakeDamage(damage);
         UIManager.Instance.SetBossHealth(CurrentHealth, MaxHealth);
+        
+        int randomInt = Random.Range(0, 99);
+        if (randomInt > 90)
+        {
+            DialogueManager.Instance.DialogueTyp = DialogueManager.DialogueType.BossTakesDamage;
+        }
     }
 
     private void IncreaseSuspicion(int amount)
     {
+        int previousSuspicion = _currentSuspicion;
         _currentSuspicion += amount;
         UIManager.Instance.SetBossSuspicion(_currentSuspicion, _maxSuspicion);
 
         if (_currentSuspicion >= _maxSuspicion)
         {
             Die(CauseOfDeath.Suspicious);
+            return;
+        }
+
+        int previousGrade = Mathf.RoundToInt((float)previousSuspicion / (float)_maxSuspicion / 3);
+        int currentGrade = Mathf.RoundToInt((float)_currentSuspicion / (float)_maxSuspicion / 3);
+
+        if (currentGrade > previousGrade)
+        {
+            DialogueManager.DialogueType type = DialogueManager.DialogueType.None;
+            switch (currentGrade)
+            {
+                case 1:
+                    type = DialogueManager.DialogueType.Suspicious_Grade1;
+                    break;
+                case 2:
+                    type = DialogueManager.DialogueType.Suspicious_Grade2;
+                    break;
+                case 3:
+                    type = DialogueManager.DialogueType.Suspicious_Grade3;
+                    break;
+            }
+
+            DialogueManager.Instance.DialogueTyp = type;
         }
     }
 
@@ -94,6 +129,7 @@ public class BossCharacter : CharacterBase
     {
         base.Die(causeOfDeath);
         UIManager.Instance.GameOver(false);
+        DialogueManager.Instance.DialogueTyp = DialogueManager.DialogueType.BossDies;
     }
 
     protected override void HandleIncomingDamageEffects(int damage)

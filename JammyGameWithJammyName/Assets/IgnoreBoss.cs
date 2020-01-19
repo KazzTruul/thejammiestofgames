@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class IgnoreBoss : MonoBehaviour
 {
-    [SerializeField] GameObject boss;
+    [SerializeField] Collider2D boss;
     private void Update()
     {
-        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), boss.GetComponent<Collider2D>());
+        Physics2D.IgnoreCollision(boss, GetComponent<Collider2D>(), true);
     }
 }
