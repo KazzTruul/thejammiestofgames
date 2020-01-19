@@ -13,10 +13,6 @@ MonoBehaviour:
   m_Name: BossDies_Dialogue_4
   m_EditorClassIdentifier: 
   dialogueData:
-  - text: You are most welcomed sir ...
+  - text: Death ... I never thought this day would come ...
     character: 1
-  - text: Your days are counted
-    character: 1
-  - text: You do have a point
-    character: 0
   used: 0

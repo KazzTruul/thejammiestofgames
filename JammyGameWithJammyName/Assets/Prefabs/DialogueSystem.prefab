@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenPhrase: 2
-  maxTimeToWait: 5
-  minTimeToWait: 2
+  maxTimeToWait: 10
+  minTimeToWait: 5
   heroText: {fileID: 0}
   bossText: {fileID: 0}
   heroTextParent: {fileID: 0}

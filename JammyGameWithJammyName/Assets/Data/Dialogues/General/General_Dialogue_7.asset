@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: General_Dialogue_7
   m_EditorClassIdentifier: 
   dialogueData:
-  - text: Hej!
-    character: {fileID: 0}
+  - text: I think I've seen you before
+    character: 0
   - text: FU BICH
-    character: {fileID: 0}
+    character: 1
   - text: 
-    character: {fileID: 0}
+    character: 0
+  used: 0
