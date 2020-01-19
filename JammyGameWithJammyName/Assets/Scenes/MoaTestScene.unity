@@ -217,7 +217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &260605467
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -297,7 +297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &473359651
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -377,7 +377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &821855054
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -485,6 +485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 2
+  maxTimeToWait: 0
+  minTimeToWait: 0
   heroText: {fileID: 968006805}
   bossText: {fileID: 1273131097}
   hero: {fileID: 0}
@@ -522,17 +524,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3fb9897d7228b47479b63c09bbe3deba, type: 2}
   - {fileID: 11400000, guid: 84facd1c21bfd7249b70d72293cfe55f, type: 2}
   - {fileID: 11400000, guid: 1aecca2e892f8b2498b043b53369ce07, type: 2}
-  funnyDialogues:
-  - {fileID: 11400000, guid: dd6cf2c40486f5a4aafea482468a44be, type: 2}
-  - {fileID: 11400000, guid: 084c04a921ec33c48afac0a64a605d89, type: 2}
-  - {fileID: 11400000, guid: ccd73cad154ee384ca8ee3691c6b44e6, type: 2}
-  - {fileID: 11400000, guid: e7450dc1a9aeff74a90d4420a1f1798f, type: 2}
-  - {fileID: 11400000, guid: 8e9defe46c748c846895c79df4d92942, type: 2}
-  - {fileID: 11400000, guid: c5503a5dd45e66c47b9b3f71fafd3c39, type: 2}
-  - {fileID: 11400000, guid: 6acb656020b4c7542950c7436976ae82, type: 2}
-  - {fileID: 11400000, guid: b7dc4135d4586df42a2054258c3bffc7, type: 2}
-  - {fileID: 11400000, guid: 3ffdcafaf4a1a604c9bfcf11367800f5, type: 2}
-  - {fileID: 11400000, guid: cac6943252bf57a4aa7c8b76e4d050a1, type: 2}
   suspiciousDialogues:
   - {fileID: 11400000, guid: 34bc0fda41c326e4db50a1ffa7b37d2f, type: 2}
   - {fileID: 11400000, guid: 1ad043054f3f2b3439a95b47bd949aea, type: 2}
@@ -1151,7 +1142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1732521712
 SpriteRenderer:
   m_ObjectHideFlags: 0

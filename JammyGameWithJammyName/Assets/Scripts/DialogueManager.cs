@@ -10,45 +10,73 @@ public class DialogueManager : MonoBehaviour
     {
         Initial = 0,
         General = 1,
-        Combat = 2,
-        Funny = 3,
-        Suspicious = 4,
-        End = 5
+        HeroTakesDamage = 2,
+        BossTakesDamage = 3,
+        Suspicious_Grade1 = 4,
+        Suspicious_Grade2 = 5,
+        Suspicious_Grade3 = 6,
+        HeroDies = 7,
+        BossDies = 8,
     }
-    [SerializeField] private float timer;
-    [SerializeField] private TextMeshPro heroText, bossText;
-    [SerializeField] private Transform hero, boss;
-    [SerializeField] private DialogueDataContainer[] initialDialogues, generalDialogues, combatDialogues, funnyDialogues, suspiciousDialogues, endDialogues;
+    [SerializeField] private float timeBetweenPhrase, maxTimeToWait, minTimeToWait;
+    [SerializeField] private TextMeshProUGUI heroText, bossText;
+    [SerializeField] private Transform heroTextParent, bossTextParent;
+    [SerializeField] private DialogueDataContainer[] initialDialogues, generalDialogues, heroDamagedDialogues, 
+                                                     bossDamagedDialogues, suspiciousDialogues_1, suspiciousDialogues_2, 
+                                                     suspiciousDialogues_3, heroDiesDialogues, bossDiesDialogues;
+
 
     private Dictionary<DialogueType, DialogueDataContainer[]> dialogueContainers;
     private DialogueDataContainer[] currentDialogueContainer;
     private DialogueDataContainer currentDialogue;
     private GameObject currentTextObject, prevTextObject;
-    private bool handlesDialogue;
+    private bool handleDialogue, handleSpecialDialogue;
+    private float timeToWait, counter;
+    private DialogueType dialogueType = DialogueType.Initial;
+
+    public DialogueType DialogueTyp
+    {
+        set
+        {
+            dialogueType = value;
+            handleSpecialDialogue = true;
+        }
+    }
 
     private void Start()
     {
         dialogueContainers = new Dictionary<DialogueType, DialogueDataContainer[]>()
-        { { DialogueType.Initial, initialDialogues }, { DialogueType.General, generalDialogues },{ DialogueType.Combat, combatDialogues },
-          { DialogueType.Funny, funnyDialogues }, { DialogueType.Suspicious, suspiciousDialogues },{ DialogueType.End, endDialogues } };
+        { { DialogueType.Initial, initialDialogues }, { DialogueType.General, generalDialogues },{ DialogueType.HeroTakesDamage, heroDamagedDialogues },
+          { DialogueType.BossTakesDamage, bossDamagedDialogues }, { DialogueType.Suspicious_Grade1, suspiciousDialogues_1 },
+          { DialogueType.Suspicious_Grade2, suspiciousDialogues_2 },{ DialogueType.Suspicious_Grade3, suspiciousDialogues_3 },
+          { DialogueType.HeroDies, heroDiesDialogues },{ DialogueType.BossDies, bossDiesDialogues } };
+
+        SetDialogue();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(handleSpecialDialogue)
         {
-            SetDialogue(DialogueType.Initial);
+            SetDialogue();
+            handleSpecialDialogue = false;
         }
-    }
-
-    private void SetDialogue(DialogueType dialogueType)
-    {
-        if (handlesDialogue)
+        if (handleDialogue)
         {
             return;
         }
+        counter += Time.deltaTime;
+        if(counter >= timeToWait)
+        {
+            counter = 0;
+            dialogueType = DialogueType.General;
+            SetDialogue();
+        }
+    }
 
-        handlesDialogue = true;
+    private void SetDialogue()
+    {
+        handleDialogue = true;
         DialogueDataContainer[] value;
         if (dialogueContainers.TryGetValue(dialogueType, out value))
         {
@@ -59,9 +87,9 @@ public class DialogueManager : MonoBehaviour
 
         if (unusedDialogues.Length <= 0)
         {
-            handlesDialogue = false;
+            handleDialogue = false;
             ResetDialogues();
-            SetDialogue(dialogueType);
+            SetDialogue();
             return;
         }
 
@@ -94,12 +122,14 @@ public class DialogueManager : MonoBehaviour
             }
             prevTextObject = currentTextObject;
             currentTextObject.SetActive(true);
-            yield return new WaitForSeconds(timer);
+            yield return new WaitForSeconds(timeBetweenPhrase);
         }
-        yield return new WaitForSeconds(timer);
+        yield return new WaitForSeconds(timeBetweenPhrase);
         prevTextObject.SetActive(false);
         currentDialogue.used = true;
-        handlesDialogue = false;
+        handleDialogue = false;
+        timeToWait = Random.Range(minTimeToWait, maxTimeToWait);
+        counter = timeToWait;
     }
 
     private void ResetDialogues()
