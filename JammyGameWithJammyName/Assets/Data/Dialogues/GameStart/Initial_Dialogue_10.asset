@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: Initial_Dialogue_10
   m_EditorClassIdentifier: 
   dialogueData:
-  - text: You are most welcomed sir ...
+  - text: So, uhh.. What's with the torn shirt and smug look?
     character: 1
-  - text: Your days are counted
-    character: 1
-  - text: You do have a point
+  - text: The fans of the game like it.
     character: 0
+  - text: '...Don''t ask why.'
+    character: 0
+  - text: '...'
+    character: 1
+  - text: Fair enough.
+    character: 1
+  used: 0

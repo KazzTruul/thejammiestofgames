@@ -15,5 +15,6 @@ MonoBehaviour:
   dialogueData:
   - text: Do you challenge me fool?
     character: 1
-  - text: Do you?
+  - text: No you.
     character: 0
+  used: 0

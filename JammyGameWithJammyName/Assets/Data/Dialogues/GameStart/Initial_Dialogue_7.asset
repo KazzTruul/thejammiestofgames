@@ -17,5 +17,6 @@ MonoBehaviour:
     character: 1
   - text: You shall die!!
     character: 1
-  - text: Hm ...
+  - text: Prove it then, big boy!
     character: 0
+  used: 0

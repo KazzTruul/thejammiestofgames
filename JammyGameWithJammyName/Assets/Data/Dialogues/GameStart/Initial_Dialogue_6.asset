@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Initial_Dialogue_6
   m_EditorClassIdentifier: 
   dialogueData:
-  - text: You have enteret the room of death
+  - text: You have enteret the room of death!
     character: 1
-  - text: How DARE you!?
+  - text: Any final words!?
     character: 1
-  - text: '... We''ll see about that.'
+  - text: '...'
     character: 0
+  - text: Yo mama.
+    character: 0
+  used: 0
