@@ -15,5 +15,6 @@ MonoBehaviour:
   dialogueData:
   - text: Do you think you can beat me?
     character: 1
-  - text: You tell me!
+  - text: I think nothing!
     character: 0
+  used: 0

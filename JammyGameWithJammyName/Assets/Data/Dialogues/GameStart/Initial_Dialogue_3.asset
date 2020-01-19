@@ -15,5 +15,6 @@ MonoBehaviour:
   dialogueData:
   - text: Welcome young knight, prepare to die!
     character: 1
-  - text: You don't know my intentions ...
+  - text: Why don't you make me?
     character: 0
+  used: 0

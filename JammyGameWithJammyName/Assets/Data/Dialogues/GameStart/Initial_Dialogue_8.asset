@@ -15,7 +15,8 @@ MonoBehaviour:
   dialogueData:
   - text: Who are YOU!?
     character: 1
-  - text: Get out or DIE ...
+  - text: Get out or DIE...
     character: 1
-  - text: I won't beg to differ.
+  - text: How inviting.
     character: 0
+  used: 0

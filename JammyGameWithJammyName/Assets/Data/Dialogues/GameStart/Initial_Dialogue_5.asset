@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Initial_Dialogue_5
   m_EditorClassIdentifier: 
   dialogueData:
-  - text: AHH! A knight!
+  - text: AHH! A tasty knight!
     character: 1
-  - text: Prepare to die
+  - text: Prepare to die!
     character: 1
   - text: You do you!
     character: 0
+  used: 0
