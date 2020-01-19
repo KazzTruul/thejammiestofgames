@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hazardObject: {fileID: 5196930625004502206, guid: 690858f05be7e904385db52f6eb671b3,
     type: 3}
-  minTimeBetweenTriggers: 5
-  maxTimeBetweenTriggers: 10
+  minTimeBetweenTriggers: 10
+  maxTimeBetweenTriggers: 15
   spawnTransform: {fileID: 6796081528532458993}
 --- !u!1 &6796081528532458992
 GameObject:
