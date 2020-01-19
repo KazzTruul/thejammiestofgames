@@ -8,6 +8,7 @@ TagManager:
   - Boulder
   - Platform
   - Ground
+  - Boss
   layers:
   - Default
   - TransparentFX
