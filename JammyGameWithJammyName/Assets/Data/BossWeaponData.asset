@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64bcd575203328e428f193196ce66f7d, type: 3}
   m_Name: BossWeaponData
   m_EditorClassIdentifier: 
-  HitSounds: []
+  HitSounds:
+  - {fileID: 8300000, guid: 399b8a68b9ed10847aece85dc2bf6b43, type: 3}
+  - {fileID: 8300000, guid: 5c9eeda152aaead4a922bb50f147f4d3, type: 3}
+  - {fileID: 8300000, guid: 5cbd040803b4f57449c32d1cc32f0a85, type: 3}
+  - {fileID: 8300000, guid: 2ac514ed8b47daa42b953b233cabdbba, type: 3}
+  - {fileID: 8300000, guid: cfd5798d1908fc24e912f7a5518998ea, type: 3}
+  - {fileID: 8300000, guid: 8a7129c6f2912ea40979b3700b849e9e, type: 3}
+  - {fileID: 8300000, guid: 637a4df73752ab34380363abc233bfdc, type: 3}
+  - {fileID: 8300000, guid: 7b10453d7b6403c4291de8b67b1ce2ab, type: 3}
+  - {fileID: 8300000, guid: 14870ab81ed4da243bd1aad2e34ee188, type: 3}
   MissSounds: []
   Damage: 10

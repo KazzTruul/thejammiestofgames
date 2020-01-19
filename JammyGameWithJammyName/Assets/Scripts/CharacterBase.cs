@@ -53,12 +53,13 @@ public abstract class CharacterBase : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(_isAttacking || _isAirborne || _invulnerable)
+        _isAirborne = !_boxCollider.IsTouchingLayers(LayerMask.GetMask("Floors"));
+
+        if (_isAttacking || _isAirborne || _invulnerable)
         {
             return;
         }
 
-        _isAirborne = !_boxCollider.IsTouchingLayers(LayerMask.GetMask("Floors"));
         _characterImage.transform.localScale = new Vector3(IsFacingLeft() ? -1f : 1f, 1f, 1f);
     }
 
