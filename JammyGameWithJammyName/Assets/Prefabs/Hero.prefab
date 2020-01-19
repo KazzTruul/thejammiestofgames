@@ -4814,7 +4814,7 @@ MonoBehaviour:
   _spriteData: {fileID: 11400000, guid: bb17ba6622d341e49afb8c22accb9c68, type: 2}
   _characterImage: {fileID: 8310945035674117302}
   _rigidbody: {fileID: 7946197201380346978}
-  _attackAnimationTime: 0.2
+  _attackAnimationTime: 0.05
   _attackCooldownTime: 1
   _leftWeaponObject: {fileID: 7726026803283997338}
   _rightWeaponObject: {fileID: 7029963751802156371}
@@ -5294,6 +5294,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7899399437106285610, guid: 52371df4498e0214dba8494bf58eb905,
+        type: 3}
+      propertyPath: _lifetime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8540130686657433548, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
       propertyPath: m_Name
@@ -5419,6 +5424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899399437106285610, guid: 52371df4498e0214dba8494bf58eb905,
+        type: 3}
+      propertyPath: _lifetime
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8540130686657433548, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}

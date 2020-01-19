@@ -62,6 +62,7 @@ public class PlayerCharacter : CharacterBase
 
     private void Dash()
     {
+        _animator.SetTrigger("Dash");
         StartCoroutine(DashTimer());
     }
 
