@@ -17,7 +17,7 @@ public class TrapSpawner : MonoBehaviour
     private IEnumerator triggerWait()
     {
         yield return new WaitForSeconds(Random.Range(minTimeBetweenTriggers, maxTimeBetweenTriggers));
-        Instantiate(hazardObject, spawnTransform);
+        Instantiate(hazardObject, spawnTransform.position, spawnTransform.localRotation);
         StartCoroutine(triggerWait());
     }
 }
