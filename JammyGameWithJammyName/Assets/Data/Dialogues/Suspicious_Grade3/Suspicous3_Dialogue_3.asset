@@ -13,10 +13,6 @@ MonoBehaviour:
   m_Name: Suspicous3_Dialogue_3
   m_EditorClassIdentifier: 
   dialogueData:
-  - text: You are most welcomed sir ...
+  - text: It's like you're not even trying...
     character: 1
-  - text: Your days are counted
-    character: 1
-  - text: You do have a point
-    character: 0
   used: 0

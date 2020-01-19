@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: HeroDamaged_Dialogue_1
   m_EditorClassIdentifier: 
   dialogueData:
-  - text: You are most welcomed sir ...
-    character: 1
-  - text: Your days are counted
-    character: 1
-  - text: You do have a point
+  - text: Ouch, that hurt!
     character: 0
+  - text: HAHAHA!
+    character: 1
   used: 0
