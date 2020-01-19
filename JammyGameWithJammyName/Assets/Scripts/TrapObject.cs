@@ -7,6 +7,11 @@ public class TrapObject : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, deathTimer);
+
+        if(gameObject.tag == "Boulder")
+        {
+            transform.position = new Vector3(Random.Range(-17f, 17f), transform.position.y, transform.position.z);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +26,13 @@ public class TrapObject : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag == "BoundryBox" || collision.collider.tag == "Platform" || collision.collider.tag == "Ground")
+        CharacterBase character = collision.collider.GetComponent<CharacterBase>();
+        if (character != null)
+        {
+            character.TakeDamage(damageAmount);
+            Destroy(gameObject);
+        }
+        if (collision.collider.tag == "BoundryBox" || collision.collider.tag == "Platform" || collision.collider.tag == "Ground")
         {
             Destroy(gameObject);
         }

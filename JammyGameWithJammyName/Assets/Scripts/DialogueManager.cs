@@ -129,7 +129,6 @@ public class DialogueManager : MonoBehaviour
         currentDialogue.used = true;
         handleDialogue = false;
         timeToWait = Random.Range(minTimeToWait, maxTimeToWait);
-        counter = timeToWait;
     }
 
     private void ResetDialogues()
