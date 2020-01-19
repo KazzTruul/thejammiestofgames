@@ -13,5 +13,15 @@ MonoBehaviour:
   m_Name: BossAudioData
   m_EditorClassIdentifier: 
   AttackAudioClips: []
-  DeathAudioClip: {fileID: 0}
-  TakeDamageAudioClips: []
+  DeathAudioClips:
+  - {fileID: 8300000, guid: c575ddc1478ba6f42843fb8fd41a9827, type: 3}
+  - {fileID: 8300000, guid: 43445cdff0d122642b6d7537f6512111, type: 3}
+  - {fileID: 8300000, guid: 895c8728b3ab097468c550d638e5519c, type: 3}
+  - {fileID: 8300000, guid: d01d15d8e36bd2b4384745484069779b, type: 3}
+  - {fileID: 8300000, guid: 32f5832280802ed4191fe30a78877ee0, type: 3}
+  TakeDamageAudioClips:
+  - {fileID: 8300000, guid: 16c9e8a03de8ad345af0baf9aaba63ab, type: 3}
+  - {fileID: 8300000, guid: ff78dfa8f450f674a86fda121afbab24, type: 3}
+  - {fileID: 8300000, guid: edb0824d10a0188408a6246448de2c1c, type: 3}
+  - {fileID: 8300000, guid: 958ce6c5f9fe3714da7eccbbfba1119a, type: 3}
+  DialogAudio: []

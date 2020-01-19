@@ -13,5 +13,14 @@ MonoBehaviour:
   m_Name: HeroAudioData
   m_EditorClassIdentifier: 
   AttackAudioClips: []
-  DeathAudioClip: {fileID: 0}
-  TakeDamageAudioClips: []
+  DeathAudioClips:
+  - {fileID: 8300000, guid: 80b9d8ad79b84c54ca3b8ab11546ed63, type: 3}
+  - {fileID: 8300000, guid: 0f6e763c916952445bacb7fcf4d0fd13, type: 3}
+  - {fileID: 8300000, guid: d2cf98f803c8f1443bf1712551d6d8d1, type: 3}
+  TakeDamageAudioClips:
+  - {fileID: 8300000, guid: 6a6849bc6406e1a489b4b23a8be32a09, type: 3}
+  - {fileID: 8300000, guid: 4d004ab5c77f31c4e8e6a26d4dded555, type: 3}
+  - {fileID: 8300000, guid: 5325ddb84ba2a064c9cda32e53b23b3d, type: 3}
+  - {fileID: 8300000, guid: dc21c116050e7ed4fb959083e065e6de, type: 3}
+  - {fileID: 8300000, guid: c8031e8ddeb63d14aa36eabb628f125d, type: 3}
+  DialogAudio: []

@@ -136,6 +136,8 @@ public abstract class CharacterBase : MonoBehaviour
 
     protected virtual void Die(CauseOfDeath causeOfDeath)
     {
+        _audioSource.PlayOneShot(_audioData.DeathAudioClips[Random.Range(0, _audioData.DeathAudioClips.Length - 1)]);
+
         switch (causeOfDeath)
         {
             case CauseOfDeath.Damage:
