@@ -60,8 +60,11 @@ public abstract class CharacterBase : MonoBehaviour
         {
             return;
         }
+        if(_rigidbody.velocity.x != 0f)
+        {
+            _characterImage.transform.localScale = new Vector3(IsFacingLeft() ? -1f : 1f, 1f, 1f);
+        }
 
-        _characterImage.transform.localScale = new Vector3(IsFacingLeft() ? -1f : 1f, 1f, 1f);
     }
 
     protected virtual void Move(float velocity)

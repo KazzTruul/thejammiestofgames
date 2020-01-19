@@ -20,11 +20,14 @@ public class PlayerCharacter : CharacterBase
     private float _horizontalSpeed;
     private float _verticalSpeed;
     private bool _isDashing;
+    private bool _facingLeft;
     
     protected override void Update()
     {
         _horizontalSpeed = Input.GetAxis("Horizontal");
         _verticalSpeed = Input.GetAxis("Vertical");
+
+        _facingLeft = IsFacingLeft();
 
         if (!IsAirborne && !_isDashing && !IsAttacking && !Invulnerable)
         {
@@ -32,7 +35,7 @@ public class PlayerCharacter : CharacterBase
             {
                 Attack();
             }
-
+                
             if (Input.GetButtonDown("Jump"))
             {
                 InstaJump();
@@ -110,6 +113,6 @@ public class PlayerCharacter : CharacterBase
 
     protected override bool IsFacingLeft()
     {
-        return _horizontalSpeed < 0f;
+        return _horizontalSpeed != 0f ? _horizontalSpeed < 0f : _facingLeft;
     }
 }
