@@ -134,13 +134,13 @@ MonoBehaviour:
   _maxHealth: 100
   _movementSpeed: 3
   _animator: {fileID: 7188776032706411411}
-  _invulnerabilityTime: 2
+  _invulnerabilityTime: 1
   _audioSource: {fileID: 1037054552154070340}
   _audioData: {fileID: 11400000, guid: a3e2da117ca645d46a5dd41d19f63c10, type: 2}
   _spriteData: {fileID: 11400000, guid: cc47fed9f38b47348b5ad7ebb6ad0788, type: 2}
   _characterImage: {fileID: 1022459191956752999}
   _rigidbody: {fileID: 5479276587916031851}
-  _attackAnimationTime: 1
+  _attackAnimationTime: 0.05
   _attackCooldownTime: 1
   _leftWeaponObject: {fileID: 4091172160973776891}
   _rightWeaponObject: {fileID: 4097816132684346578}
@@ -150,7 +150,7 @@ MonoBehaviour:
   _initialSuspicion: 10
   _suspicionPerDamage: 2
   _attackPreparationTime: 1
-  _attackRange: 3
+  _attackRange: 8
 --- !u!61 &4864500606719134782
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -385,6 +385,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 544658859172594519, guid: 511bcc5c552eb824a9844e4e1ed055e8,
+        type: 3}
+      propertyPath: _lifetime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2066002324530495665, guid: 511bcc5c552eb824a9844e4e1ed055e8,
         type: 3}
       propertyPath: m_Name
@@ -480,6 +485,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 544658859172594519, guid: 511bcc5c552eb824a9844e4e1ed055e8,
+        type: 3}
+      propertyPath: _lifetime
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2066002324530495665, guid: 511bcc5c552eb824a9844e4e1ed055e8,
         type: 3}
