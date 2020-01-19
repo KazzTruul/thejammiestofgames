@@ -26,7 +26,7 @@ public class PlayerCharacter : CharacterBase
         _horizontalSpeed = Input.GetAxis("Horizontal");
         _verticalSpeed = Input.GetAxis("Vertical");
 
-        if (!IsAirborne && !_isDashing && !IsAttacking)
+        if (!IsAirborne && !_isDashing && !IsAttacking && !Invulnerable)
         {
             if (Input.GetButtonDown("Fire"))
             {

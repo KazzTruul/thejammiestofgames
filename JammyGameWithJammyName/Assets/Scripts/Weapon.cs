@@ -46,16 +46,16 @@ public class Weapon : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         CharacterBase hitCharacter = other.GetComponent<CharacterBase>();
         if (hitCharacter == null || hitCharacter == _owner)
         {
-            _audioSource.PlayOneShot(_weaponData.MissSounds[Random.Range(0, _weaponData.MissSounds.Length - 1)]);
+            //_audioSource.PlayOneShot(_weaponData.MissSounds[Random.Range(0, _weaponData.MissSounds.Length - 1)]);
             return;
         }
 
-        _audioSource.PlayOneShot(_weaponData.HitSounds[Random.Range(0, _weaponData.HitSounds.Length - 1)]);
+        //_audioSource.PlayOneShot(_weaponData.HitSounds[Random.Range(0, _weaponData.HitSounds.Length - 1)]);
         hitCharacter.TakeDamage(_weaponData.Damage);
     }
 }

@@ -43,14 +43,21 @@ public abstract class CharacterBase : MonoBehaviour
     protected int MaxHealth => _maxHealth;
     protected bool IsAttacking => _isAttacking;
     protected bool IsAirborne => _isAirborne;
+    protected bool Invulnerable => _invulnerable;
 
-    private void Start()
+    private void Awake()
     {
         _boxCollider = GetComponent<BoxCollider2D>();
+        _currentHealth = MaxHealth;
     }
 
     protected virtual void Update()
     {
+        if(_isAttacking || _isAirborne || _invulnerable)
+        {
+            return;
+        }
+
         _isAirborne = !_boxCollider.IsTouchingLayers(LayerMask.GetMask("Floors"));
         _characterImage.transform.localScale = new Vector3(IsFacingLeft() ? -1f : 1f, 1f, 1f);
     }
@@ -90,6 +97,7 @@ public abstract class CharacterBase : MonoBehaviour
         {
             return;
         }
+
 
         _currentHealth -= damage;
         if (_currentHealth <= 0)
