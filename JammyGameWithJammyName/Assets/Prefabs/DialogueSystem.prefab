@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2961383805739655000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2961383805739655002}
+  - component: {fileID: 2961383805739655003}
+  m_Layer: 0
+  m_Name: DialogueSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2961383805739655002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2961383805739655000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2961383805739655003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2961383805739655000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7354d47b1e1f8504792927b8b52df865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenPhrase: 2
+  maxTimeToWait: 5
+  minTimeToWait: 2
+  heroText: {fileID: 0}
+  bossText: {fileID: 0}
+  heroTextParent: {fileID: 0}
+  bossTextParent: {fileID: 0}
+  initialDialogues:
+  - {fileID: 11400000, guid: a53bc9b8e4dcd3e418e8c01d871861be, type: 2}
+  - {fileID: 11400000, guid: 3abadf0d2a298a041a46a911e35effb3, type: 2}
+  - {fileID: 11400000, guid: decdf33859e1e3642aeffb4a57c01da3, type: 2}
+  - {fileID: 11400000, guid: 1bcabaeb55af397449d5c1bdc0ff8ce4, type: 2}
+  - {fileID: 11400000, guid: ef12c301ca499b74592f98431a22f117, type: 2}
+  - {fileID: 11400000, guid: f58848c46e73d454391743059fa5375e, type: 2}
+  - {fileID: 11400000, guid: 73ad8b65bdf9934448f4cac61cb0f663, type: 2}
+  - {fileID: 11400000, guid: 0594241d36d96e44d939b25aed26a286, type: 2}
+  - {fileID: 11400000, guid: 43511b7a9c6140b4da122fbc23e51676, type: 2}
+  - {fileID: 11400000, guid: 6ea785c848571f74fb0e1591f4f69377, type: 2}
+  generalDialogues:
+  - {fileID: 11400000, guid: 871137e279e09ca4eb7b611f9d51743b, type: 2}
+  - {fileID: 11400000, guid: 2ea829185502efb45bf0fb05c93869a5, type: 2}
+  - {fileID: 11400000, guid: 57950f2f8a8f20b4781d8e2580008341, type: 2}
+  - {fileID: 11400000, guid: 8ea552ded75c1de49b0ffca6b8d7f586, type: 2}
+  - {fileID: 11400000, guid: a5d935d1f03433349b4f39e0bd0c7a67, type: 2}
+  - {fileID: 11400000, guid: 7d971576b9aa34e46990e17a4e78c2ed, type: 2}
+  - {fileID: 11400000, guid: ef443763f61e7784b948e9e479d3380b, type: 2}
+  - {fileID: 11400000, guid: 8ab953714fe0a9a4a9213f7084b84d26, type: 2}
+  - {fileID: 11400000, guid: bdba5edc836601b43ada1dc6c14992f2, type: 2}
+  - {fileID: 11400000, guid: 8924b5bbded1f14418c323e37118d378, type: 2}
+  heroDamagedDialogues:
+  - {fileID: 11400000, guid: 272013a621585db478eea4352f171b80, type: 2}
+  - {fileID: 11400000, guid: e0cf5c71ce406194ca9add7c1c67c6ce, type: 2}
+  - {fileID: 11400000, guid: bd80069881cf2924185c8d1b2b9158fb, type: 2}
+  - {fileID: 11400000, guid: 8153bb72a835cad449c19032d2896a37, type: 2}
+  - {fileID: 11400000, guid: 4e3737adf5cb3cd4a94955735462bd8d, type: 2}
+  - {fileID: 11400000, guid: e9e2d4bd37ff590488f703927263f55e, type: 2}
+  - {fileID: 11400000, guid: dd3997864cf8f694c90b63b2429664fc, type: 2}
+  - {fileID: 11400000, guid: a85d316662aa50c4cb8146888237d6f4, type: 2}
+  - {fileID: 11400000, guid: 34c361a65c304b442a9dad1dad8ca34a, type: 2}
+  - {fileID: 11400000, guid: 0649b9394a7343644a34cebd3cc2c5fa, type: 2}
+  bossDamagedDialogues:
+  - {fileID: 11400000, guid: 239928f3090fcdd46b0836bda0e111ba, type: 2}
+  - {fileID: 11400000, guid: bbda450127ea6f94aa26402aaf7dd9cc, type: 2}
+  - {fileID: 11400000, guid: 1c1fe8a1875c2514cbc380f8c731f654, type: 2}
+  - {fileID: 11400000, guid: d093c1bdea17e3645bae9785f670ea81, type: 2}
+  - {fileID: 11400000, guid: 9381b1e5aa06621449a8acdccf44c235, type: 2}
+  - {fileID: 11400000, guid: 56f61d0178ca2204ba00dd4c953e3229, type: 2}
+  - {fileID: 11400000, guid: 8689f8ea340ab9b4db5145097c44c204, type: 2}
+  - {fileID: 11400000, guid: 3aef4148f1ba278499a1d0aea2d89fc3, type: 2}
+  - {fileID: 11400000, guid: 1a3ef57778f2e374c9e3a227df113c49, type: 2}
+  - {fileID: 11400000, guid: 10b4402c158c22741a7f7fdbe3bf040f, type: 2}
+  suspiciousDialogues_1:
+  - {fileID: 11400000, guid: 4ea484bcbacddbb40b269e7faed43d2f, type: 2}
+  - {fileID: 11400000, guid: ae1cd81a4bff724429108fb9728e58d4, type: 2}
+  - {fileID: 11400000, guid: 9ce6ee068cd16174eb248b43e58df3bc, type: 2}
+  - {fileID: 11400000, guid: 037c2e0e65104d843b0c28ecb9989011, type: 2}
+  - {fileID: 11400000, guid: 273f5a237b24cc44b9e26f1dc66867fd, type: 2}
+  - {fileID: 11400000, guid: ab11a95ef134590409fe98ef87a3071d, type: 2}
+  - {fileID: 11400000, guid: 3855b5db4a8197a46be22a6f9d4beead, type: 2}
+  - {fileID: 11400000, guid: 0ef3608c608fc5b47861e58e665c1046, type: 2}
+  - {fileID: 11400000, guid: ed30ac2ddbe9f3c48a157ef63d1216c7, type: 2}
+  - {fileID: 11400000, guid: 254b1960b1f948f468455467db6c7607, type: 2}
+  suspiciousDialogues_2:
+  - {fileID: 11400000, guid: 63164d720e3b7ec4681e448f60866eb4, type: 2}
+  - {fileID: 11400000, guid: 7071dba428a958549ab4f984634bc332, type: 2}
+  - {fileID: 11400000, guid: f409e3281781f674dbef5e89f79981f2, type: 2}
+  - {fileID: 11400000, guid: 21fa096022efce44c80caa365e161ee6, type: 2}
+  - {fileID: 11400000, guid: acaa64dc8a90c674ba78e88ce18cef99, type: 2}
+  - {fileID: 11400000, guid: 95545cb76447f8b40ae78fe52167cb7e, type: 2}
+  - {fileID: 11400000, guid: cedab12ee1b1977489166601463eb7de, type: 2}
+  - {fileID: 11400000, guid: 373bdad3f40f8304790cbaa12b2b4dd7, type: 2}
+  - {fileID: 11400000, guid: c1f8d7661f8c8f044bdff2aa7b680d2b, type: 2}
+  - {fileID: 11400000, guid: 3af34803a09eb5d4c931f7bf22275d6a, type: 2}
+  suspiciousDialogues_3:
+  - {fileID: 11400000, guid: 249570689f165574db79f0c5727c9c2b, type: 2}
+  - {fileID: 11400000, guid: d0c83844fa69a2640ad0ac1923fc8937, type: 2}
+  - {fileID: 11400000, guid: 4babfc5c8b5804842b9d77287b4c5bfb, type: 2}
+  - {fileID: 11400000, guid: 04803a515c3c4084bbdf6b523770a1fd, type: 2}
+  - {fileID: 11400000, guid: 4b7a2c25f3ca44f40810b277ee7d572d, type: 2}
+  - {fileID: 11400000, guid: dd553a495d804424fbdd61ee48b68575, type: 2}
+  - {fileID: 11400000, guid: 78e2ab1f9ea23304f9416f77c1b6462b, type: 2}
+  - {fileID: 11400000, guid: 506bd206aca07014b8b8640d726898aa, type: 2}
+  - {fileID: 11400000, guid: 7055c3ec776d15a46b70025465fe966b, type: 2}
+  - {fileID: 11400000, guid: 2f68d3b9358fff14697eb4723bdf5fb8, type: 2}
+  heroDiesDialogues:
+  - {fileID: 11400000, guid: dab9406b7de4c61478f78da4aa463660, type: 2}
+  - {fileID: 11400000, guid: f3b284c16b6005241a2f15f5eb2c5a33, type: 2}
+  - {fileID: 11400000, guid: 1cc54ea6eb799bd438993750bae46643, type: 2}
+  - {fileID: 11400000, guid: 2e3da46ad070def4097182b0095f19b3, type: 2}
+  - {fileID: 11400000, guid: b52db1f5507388b48ae4766aba7b3171, type: 2}
+  - {fileID: 11400000, guid: d5cbb1b128a732d489574cc648e63485, type: 2}
+  - {fileID: 11400000, guid: 7fa18d1c2c2e6c34ba4d7481c5d49a71, type: 2}
+  - {fileID: 11400000, guid: a1fbf7366b5dde744a5222ce414437ef, type: 2}
+  - {fileID: 11400000, guid: 8b6511295e8b2d5409e4074dc8cd63e4, type: 2}
+  - {fileID: 11400000, guid: 3920dfe06221fb84390ab5ddac05d4ed, type: 2}
+  bossDiesDialogues:
+  - {fileID: 11400000, guid: 24e5b12f43565bd4799ffde90b0fa87f, type: 2}
+  - {fileID: 11400000, guid: fd4395464da67994aaa0acd0a2ed65d1, type: 2}
+  - {fileID: 11400000, guid: eb08802f9b49b7b40bde2efb87fc4278, type: 2}
+  - {fileID: 11400000, guid: 7189fece874cc1a4582c3359c494a9fe, type: 2}
+  - {fileID: 11400000, guid: 14e7f65aedf65f4499d1092ed0942973, type: 2}
+  - {fileID: 11400000, guid: 8e0720aeeb40e0c47bc6cf75b33d0499, type: 2}
+  - {fileID: 11400000, guid: 590de1ce37c8d3644956a11939cb1a6f, type: 2}
+  - {fileID: 11400000, guid: 9de527c468114bf47bcd8e0c28064202, type: 2}
+  - {fileID: 11400000, guid: 7e7dcaac379ac6e4191fcf7938370548, type: 2}
+  - {fileID: 11400000, guid: 3b2ec4c94ee024140abc7c70aea0e219, type: 2}
