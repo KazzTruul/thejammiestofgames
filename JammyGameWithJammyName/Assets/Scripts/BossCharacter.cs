@@ -15,6 +15,8 @@ public class BossCharacter : CharacterBase
     private float _attackPreparationTime;
     [SerializeField]
     private float _attackRange;
+    [SerializeField]
+    private int _suspicionPerSecond;
 
     private int _currentSuspicion;
 
@@ -26,10 +28,19 @@ public class BossCharacter : CharacterBase
     {
         _currentSuspicion = _initialSuspicion;
         _player = FindObjectOfType<PlayerCharacter>();
+        StartCoroutine(IncreaseSuspicion());
+    }
+
+    private IEnumerator IncreaseSuspicion()
+    {
+        yield return new WaitForSeconds(1);
+        _currentSuspicion += _suspicionPerSecond;
+        StartCoroutine(IncreaseSuspicion());
     }
 
     protected override void Update()
     {
+
         if (!IsAttacking && !_preparingAttack)
         {
             if (Vector3.Distance(transform.position, _player.transform.position) <= _attackRange)
@@ -48,7 +59,7 @@ public class BossCharacter : CharacterBase
     private IEnumerator PrepareAttack()
     {
         _preparingAttack = true;
-        //_animator.SetTrigger("PrepareAttack");
+        _animator.SetTrigger("PrepareAttack");
         yield return new WaitForSeconds(_attackPreparationTime);
         _preparingAttack = false;
         Attack();

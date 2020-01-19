@@ -182,6 +182,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4864500606719134781, guid: 339e0d4abee05694ba29b53623267a76,
+        type: 3}
+      propertyPath: _suspicionPerSecond
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864500606719134781, guid: 339e0d4abee05694ba29b53623267a76,
+        type: 3}
+      propertyPath: _suspicionPerDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864500606719134781, guid: 339e0d4abee05694ba29b53623267a76,
+        type: 3}
+      propertyPath: _attackPreparationTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4864500606719134783, guid: 339e0d4abee05694ba29b53623267a76,
         type: 3}
       propertyPath: m_Name
@@ -1375,6 +1390,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1131954072, guid: 9953b0f1bf2f99042adf16dd8b398f1d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -33.06006
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131954072, guid: 9953b0f1bf2f99042adf16dd8b398f1d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 34.00006
+      objectReference: {fileID: 0}
     - target: {fileID: 67266631271357254, guid: 9953b0f1bf2f99042adf16dd8b398f1d,
         type: 3}
       propertyPath: m_Name
@@ -1483,6 +1506,31 @@ PrefabInstance:
     - target: {fileID: 67266631271357306, guid: 9953b0f1bf2f99042adf16dd8b398f1d,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746624739012783320, guid: 9953b0f1bf2f99042adf16dd8b398f1d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746624739012783320, guid: 9953b0f1bf2f99042adf16dd8b398f1d,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746624739012783320, guid: 9953b0f1bf2f99042adf16dd8b398f1d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746624739012783320, guid: 9953b0f1bf2f99042adf16dd8b398f1d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746624739012783320, guid: 9953b0f1bf2f99042adf16dd8b398f1d,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
