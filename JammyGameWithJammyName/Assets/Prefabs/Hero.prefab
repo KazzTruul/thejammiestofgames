@@ -5209,6 +5209,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 1799875854807124430, guid: 52371df4498e0214dba8494bf58eb905,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2562805267589321356, guid: 52371df4498e0214dba8494bf58eb905,
         type: 3}
       propertyPath: m_Offset.x
