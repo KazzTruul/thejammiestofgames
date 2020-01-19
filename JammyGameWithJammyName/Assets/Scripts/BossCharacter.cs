@@ -24,7 +24,7 @@ public class BossCharacter : CharacterBase
 
     private PlayerCharacter _player;
 
-    protected override bool _dontTurn => Mathf.Abs(Vector2.Distance(transform.position, _player.transform.position)) <  _attackRange * 1f;
+    protected override bool _dontTurn => Mathf.Abs(transform.position.x - _player.transform.position.x) <  _attackRange * 0.1f;
 
     private void Start()
     {
