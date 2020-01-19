@@ -5,19 +5,19 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
-    private Slider _heroHealthSlider;
+    private Image _heroHealthSlider;
     [SerializeField]
     private TMP_Text _heroHealthText;
     [SerializeField]
-    private Slider _bossHealthSlider;
+    private Image _bossHealthSlider;
     [SerializeField]
     private TMP_Text _bossHealthText;
     [SerializeField]
-    private Slider _bossSuspicionSlider;
+    private Image _bossSuspicionSlider;
     [SerializeField]
     private TMP_Text _bossSuspicionText;
     [SerializeField]
-    private Slider _bossBloodPressureSlider;
+    private Image _bossBloodPressureSlider;
     [SerializeField]
     private TMP_Text _bossBloodPressureText;
     [SerializeField]
@@ -44,30 +44,26 @@ public class UIManager : MonoBehaviour
 
     public void SetHeroHealth(int current, int max)
     {
-        _heroHealthSlider.value = current;
-        _heroHealthSlider.maxValue = max;
-        _heroHealthText.text = $"{current}/{max} HP";
+        _heroHealthSlider.fillAmount = (float)current / (float)max;
+        _heroHealthText.text = $"{current}/{max} hp";
     }
 
     public void SetBossHealth(int current, int max)
     {
-        _bossHealthSlider.value = current;
-        _bossHealthSlider.maxValue = max;
-        _bossHealthText.text = $"{current}/{max} HP";
+        _bossHealthSlider.fillAmount = (float)current / (float)max;
+        _bossHealthText.text = $"{current}/{max} hp";
     }
 
     public void SetBossSuspicion(int current, int max)
     {
-        _bossSuspicionSlider.value = current;
-        _bossSuspicionSlider.maxValue = max;
-        _bossSuspicionText.text = $"{current}/{max} Suspicion";
+        _bossSuspicionSlider.fillAmount = (float)current / (float)max;
+        _bossSuspicionText.text = $"{Mathf.Round((float)current / (float)max)}%";
     }
 
     public void SetBossBloodPressure(int current, int max)
     {
-        _bossBloodPressureSlider.value = current;
-        _bossBloodPressureSlider.maxValue = max;
-        _bossBloodPressureText.text = $"{current} BPM";
+        _bossBloodPressureSlider.fillAmount = (float)current / (float)max;
+        _bossBloodPressureText.text = $"{current} bpm";
     }
 
     public void GameOver(bool gameWon)
