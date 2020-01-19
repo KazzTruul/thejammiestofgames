@@ -16,6 +16,9 @@ public class MenuHandler : MonoBehaviour
 
     public void PreviousScene()
     {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
