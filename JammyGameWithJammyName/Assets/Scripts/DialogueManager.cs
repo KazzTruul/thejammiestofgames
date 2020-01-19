@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
     }
     [SerializeField] private float timeBetweenPhrase, maxTimeToWait, minTimeToWait;
     [SerializeField] private TextMeshProUGUI heroText, bossText;
-    [SerializeField] private Transform heroTextParent, bossTextParent;
+    [SerializeField] private GameObject heroTextParent, bossTextParent;
     [SerializeField] private DialogueDataContainer[] initialDialogues, generalDialogues, heroDamagedDialogues, 
                                                      bossDamagedDialogues, suspiciousDialogues_1, suspiciousDialogues_2, 
                                                      suspiciousDialogues_3, heroDiesDialogues, bossDiesDialogues;
@@ -109,11 +109,11 @@ public class DialogueManager : MonoBehaviour
             {
                 case Character.Hero:
                     heroText.text = dialogue[i].text;
-                    currentTextObject = heroText.gameObject;
+                    currentTextObject = heroTextParent;
                     break;
                 case Character.Boss:
                     bossText.text = dialogue[i].text;
-                    currentTextObject = bossText.gameObject;
+                    currentTextObject = bossTextParent;
                     break;
             }
             if (prevTextObject != null)
