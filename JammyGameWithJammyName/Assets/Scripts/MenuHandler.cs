@@ -36,7 +36,7 @@ public class MenuHandler : MonoBehaviour
 
     public void LoadTutorialScene()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 
     public void HoverButtonExit(Text text)
