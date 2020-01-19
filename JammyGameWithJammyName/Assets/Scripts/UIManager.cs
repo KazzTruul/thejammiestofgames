@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
@@ -68,6 +69,15 @@ public class UIManager : MonoBehaviour
 
     public void GameOver(bool gameWon)
     {
+        GameStateManager.SetGameState(GameState.GameOver);
+
+        StartCoroutine(DelayEndScreen(gameWon));
+    }
+
+    private IEnumerator DelayEndScreen(bool gameWon)
+    {
+        yield return new WaitForSeconds(2f);
+
         if (gameWon)
         {
             _winScreen.SetActive(true);
@@ -76,5 +86,6 @@ public class UIManager : MonoBehaviour
         {
             _gameOverScreen.SetActive(true);
         }
+
     }
 }
