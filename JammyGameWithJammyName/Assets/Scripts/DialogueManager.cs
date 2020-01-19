@@ -17,12 +17,14 @@ public class DialogueManager : MonoBehaviour
         Suspicious_Grade3 = 6,
         HeroDies = 7,
         BossDies = 8,
+        None = 9
     }
     [SerializeField] private float timeBetweenPhrase, maxTimeToWait, minTimeToWait;
     [SerializeField] private TextMeshProUGUI heroText, bossText;
     [SerializeField] private GameObject heroTextParent, bossTextParent;
-    [SerializeField] private DialogueDataContainer[] initialDialogues, generalDialogues, heroDamagedDialogues, 
-                                                     bossDamagedDialogues, suspiciousDialogues_1, suspiciousDialogues_2, 
+    [SerializeField]
+    private DialogueDataContainer[] initialDialogues, generalDialogues, heroDamagedDialogues,
+                                                     bossDamagedDialogues, suspiciousDialogues_1, suspiciousDialogues_2,
                                                      suspiciousDialogues_3, heroDiesDialogues, bossDiesDialogues;
 
 
@@ -34,13 +36,32 @@ public class DialogueManager : MonoBehaviour
     private float timeToWait, counter;
     private DialogueType dialogueType = DialogueType.Initial;
 
+    private static DialogueManager _instance;
+
+    public static DialogueManager Instance => _instance;
+
     public DialogueType DialogueTyp
     {
         set
         {
+            if (value == DialogueType.None)
+            {
+                return;
+            }
             dialogueType = value;
             handleSpecialDialogue = true;
         }
+    }
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+        _instance = this;
     }
 
     private void Start()
@@ -56,7 +77,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if(handleSpecialDialogue)
+        if (handleSpecialDialogue)
         {
             SetDialogue();
             handleSpecialDialogue = false;
@@ -66,7 +87,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         counter += Time.deltaTime;
-        if(counter >= timeToWait)
+        if (counter >= timeToWait)
         {
             counter = 0;
             dialogueType = DialogueType.General;

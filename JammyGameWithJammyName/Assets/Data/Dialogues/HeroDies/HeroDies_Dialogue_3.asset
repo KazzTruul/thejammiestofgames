@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: HeroDies_Dialogue_3
   m_EditorClassIdentifier: 
   dialogueData:
-  - text: You are most welcomed sir ...
-    character: 1
-  - text: Your days are counted
-    character: 1
-  - text: You do have a point
+  - text: Finally, a.. worthy.. opponent...
     character: 0
+  - text: Damn right, scrub.
+    character: 1
   used: 0

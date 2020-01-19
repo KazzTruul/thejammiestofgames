@@ -93,6 +93,12 @@ public class PlayerCharacter : CharacterBase
     {
         base.TakeDamage(damage);
         UIManager.Instance.SetHeroHealth(CurrentHealth, MaxHealth);
+
+        int randomInt = Random.Range(0, 99);
+        if (randomInt > 97)
+        {
+            DialogueManager.Instance.DialogueTyp = DialogueManager.DialogueType.HeroTakesDamage;
+        }
     }
 
     private void InstaJump()
@@ -103,6 +109,7 @@ public class PlayerCharacter : CharacterBase
     protected override void Die(CauseOfDeath causeOfDeath)
     {
         base.Die(causeOfDeath);
+        DialogueManager.Instance.DialogueTyp = DialogueManager.DialogueType.HeroDies;
         UIManager.Instance.GameOver(true);
     }
 

@@ -77,34 +77,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e0cf5c71ce406194ca9add7c1c67c6ce, type: 2}
   - {fileID: 11400000, guid: bd80069881cf2924185c8d1b2b9158fb, type: 2}
   - {fileID: 11400000, guid: 8153bb72a835cad449c19032d2896a37, type: 2}
-  - {fileID: 11400000, guid: 4e3737adf5cb3cd4a94955735462bd8d, type: 2}
-  - {fileID: 11400000, guid: e9e2d4bd37ff590488f703927263f55e, type: 2}
-  - {fileID: 11400000, guid: dd3997864cf8f694c90b63b2429664fc, type: 2}
-  - {fileID: 11400000, guid: a85d316662aa50c4cb8146888237d6f4, type: 2}
-  - {fileID: 11400000, guid: 34c361a65c304b442a9dad1dad8ca34a, type: 2}
-  - {fileID: 11400000, guid: 0649b9394a7343644a34cebd3cc2c5fa, type: 2}
   bossDamagedDialogues:
   - {fileID: 11400000, guid: 239928f3090fcdd46b0836bda0e111ba, type: 2}
   - {fileID: 11400000, guid: bbda450127ea6f94aa26402aaf7dd9cc, type: 2}
   - {fileID: 11400000, guid: 1c1fe8a1875c2514cbc380f8c731f654, type: 2}
-  - {fileID: 11400000, guid: d093c1bdea17e3645bae9785f670ea81, type: 2}
-  - {fileID: 11400000, guid: 9381b1e5aa06621449a8acdccf44c235, type: 2}
-  - {fileID: 11400000, guid: 56f61d0178ca2204ba00dd4c953e3229, type: 2}
-  - {fileID: 11400000, guid: 8689f8ea340ab9b4db5145097c44c204, type: 2}
-  - {fileID: 11400000, guid: 3aef4148f1ba278499a1d0aea2d89fc3, type: 2}
-  - {fileID: 11400000, guid: 1a3ef57778f2e374c9e3a227df113c49, type: 2}
-  - {fileID: 11400000, guid: 10b4402c158c22741a7f7fdbe3bf040f, type: 2}
   suspiciousDialogues_1:
   - {fileID: 11400000, guid: 4ea484bcbacddbb40b269e7faed43d2f, type: 2}
   - {fileID: 11400000, guid: ae1cd81a4bff724429108fb9728e58d4, type: 2}
   - {fileID: 11400000, guid: 9ce6ee068cd16174eb248b43e58df3bc, type: 2}
   - {fileID: 11400000, guid: 037c2e0e65104d843b0c28ecb9989011, type: 2}
-  - {fileID: 11400000, guid: 273f5a237b24cc44b9e26f1dc66867fd, type: 2}
-  - {fileID: 11400000, guid: ab11a95ef134590409fe98ef87a3071d, type: 2}
-  - {fileID: 11400000, guid: 3855b5db4a8197a46be22a6f9d4beead, type: 2}
-  - {fileID: 11400000, guid: 0ef3608c608fc5b47861e58e665c1046, type: 2}
-  - {fileID: 11400000, guid: ed30ac2ddbe9f3c48a157ef63d1216c7, type: 2}
-  - {fileID: 11400000, guid: 254b1960b1f948f468455467db6c7607, type: 2}
   suspiciousDialogues_2:
   - {fileID: 11400000, guid: 63164d720e3b7ec4681e448f60866eb4, type: 2}
   - {fileID: 11400000, guid: 7071dba428a958549ab4f984634bc332, type: 2}
@@ -112,10 +93,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 21fa096022efce44c80caa365e161ee6, type: 2}
   - {fileID: 11400000, guid: acaa64dc8a90c674ba78e88ce18cef99, type: 2}
   - {fileID: 11400000, guid: 95545cb76447f8b40ae78fe52167cb7e, type: 2}
-  - {fileID: 11400000, guid: cedab12ee1b1977489166601463eb7de, type: 2}
-  - {fileID: 11400000, guid: 373bdad3f40f8304790cbaa12b2b4dd7, type: 2}
-  - {fileID: 11400000, guid: c1f8d7661f8c8f044bdff2aa7b680d2b, type: 2}
-  - {fileID: 11400000, guid: 3af34803a09eb5d4c931f7bf22275d6a, type: 2}
   suspiciousDialogues_3:
   - {fileID: 11400000, guid: 249570689f165574db79f0c5727c9c2b, type: 2}
   - {fileID: 11400000, guid: d0c83844fa69a2640ad0ac1923fc8937, type: 2}
@@ -123,10 +100,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 04803a515c3c4084bbdf6b523770a1fd, type: 2}
   - {fileID: 11400000, guid: 4b7a2c25f3ca44f40810b277ee7d572d, type: 2}
   - {fileID: 11400000, guid: dd553a495d804424fbdd61ee48b68575, type: 2}
-  - {fileID: 11400000, guid: 78e2ab1f9ea23304f9416f77c1b6462b, type: 2}
-  - {fileID: 11400000, guid: 506bd206aca07014b8b8640d726898aa, type: 2}
-  - {fileID: 11400000, guid: 7055c3ec776d15a46b70025465fe966b, type: 2}
-  - {fileID: 11400000, guid: 2f68d3b9358fff14697eb4723bdf5fb8, type: 2}
   heroDiesDialogues:
   - {fileID: 11400000, guid: dab9406b7de4c61478f78da4aa463660, type: 2}
   - {fileID: 11400000, guid: f3b284c16b6005241a2f15f5eb2c5a33, type: 2}

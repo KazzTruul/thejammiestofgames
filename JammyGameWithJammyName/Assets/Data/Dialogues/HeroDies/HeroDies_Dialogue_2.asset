@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: HeroDies_Dialogue_2
   m_EditorClassIdentifier: 
   dialogueData:
-  - text: You are most welcomed sir ...
+  - text: I'm the greatest fighter! You can ask anyone, everybody knows it. Also I'm
+      very humble about my superior skills. Make Ogreland Great Agaaaain!
     character: 1
-  - text: Your days are counted
-    character: 1
-  - text: You do have a point
-    character: 0
   used: 0
